@@ -27,7 +27,6 @@ echo "Checking URL  = $checkURL"
 if [ "$VPN_IP" != "" ] && [ "$VPN_GW" != "" ]
 then
 	# If ovpn interface has an IP and a gateway, test further
-	#/sbin/ping -c 3 -S $VPN_IP $MHG_IP > /dev/null
 	if curl --interface ovpnc$VPN_IF -k $checkURL > Manhuagui.html
 	then echo "Access URL was successful"
 	else echo "Access URL was Failed"
